@@ -30,14 +30,15 @@ Below Navigation URL is working:
 https://port4004-workspaces-ws-r6nnf.us10.trial.applicationstudio.cloud.sap/product-location/ProductPlant(product_id='19091',plant_id='1011')/listing
 
 Steps for installation and deploy.
-Run the below commands:
->npm install
->cds add hana
->cds add mta
->mbt build
->cf7 deploy mta_archives/PRP1_1.0.0.mtar
->cf7 deploy mta_archives/PRP1_1.0.0.mtar --delete-services
->npm cache clean --force
 
-To pull changes from main brach
->git pull origin main
+Run the below commands:
+- npm install
+- cds add hana
+- cds add mta
+- mbt build
+- cf7 deploy mta_archives/PRP1_1.0.0.mtar
+- cf7 deploy mta_archives/PRP1_1.0.0.mtar --delete-services
+- npm cache clean --force
+
+To pull/push changes from main brach
+- git pull/push origin main
