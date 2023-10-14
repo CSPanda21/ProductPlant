@@ -29,7 +29,7 @@ Learn more at https://cap.cloud.sap/docs/get-started/.
 Below Navigation URL is working:
 https://port4004-workspaces-ws-r6nnf.us10.trial.applicationstudio.cloud.sap/product-location/ProductPlant(product_id='19091',plant_id='1011')/listing
 
-Steps for installation and deploy:
+Steps for installation and deploy.
 Run the below commands:
 >npm install
 >cds add hana
