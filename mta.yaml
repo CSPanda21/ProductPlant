@@ -1,5 +1,5 @@
 _schema-version: '3.1'
-ID: PRP1
+ID: my_proj
 version: 1.0.0
 description: "A simple CAP project."
 parameters:
@@ -8,32 +8,33 @@ build-parameters:
   before-all:
     - builder: custom
       commands:
+        - npm install --production
         - npx -p @sap/cds-dk cds build --production
 modules:
-  - name: PRP1-srv
+  - name: my_proj-srv
     type: nodejs
     path: gen/srv
     parameters:
       buildpack: nodejs_buildpack
     build-parameters:
-      builder: npm-ci
+      builder: npm
     provides:
       - name: srv-api # required by consumers of CAP services (e.g. approuter)
         properties:
           srv-url: ${default-url}
     requires:
-      - name: PRP1-db
+      - name: my_proj-db
 
-  - name: PRP1-db-deployer
+  - name: my_proj-db-deployer
     type: hdb
     path: gen/db
     parameters:
       buildpack: nodejs_buildpack
     requires:
-      - name: PRP1-db
+      - name: my_proj-db
 
 resources:
-  - name: PRP1-db
+  - name: my_proj-db
     type: com.sap.xs.hdi-container
     parameters:
       service: hana
