@@ -42,3 +42,6 @@ Run the below commands:
 
 To pull/push changes from main brach
 - git pull/push origin main
+
+### Note
+- Initially after adding the authorization the path from approuter was not working. Then I have added in xs-security.json the redirect-uri "https://*.hana.ondemand.com/**" and it started working. So now if you deploy this code to CF and run app router it is working. But if you directly put the URI of service then it will not work because it has to pass authorization check. In app router it is done automatically by taking the JWOT token from XSUAA and calling the service with the same token. 

@@ -8,6 +8,11 @@ default-*.json
 gen/
 node_modules/
 target/
+db/src
+db/undeploy.json
+app/db/src
+app/db/undeploy.json
+app/db/
 
 # Web IDE, App Studio
 .che/

@@ -3,7 +3,7 @@
 using { sap.cic.product.ProductPlant as PP} from '../db/product/ProductPlant.cds';
 
 /* This service gets the latest listing and returns its staus */
-service ProductLocation_ListingStatus {
+service ProductLocation_ListingStatus @(requires: 'authenticated-user') {
 
 // @readonly entity Products as projection on Prd;    
 
