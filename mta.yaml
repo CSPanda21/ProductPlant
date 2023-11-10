@@ -25,6 +25,7 @@ modules:
     requires:
       - name: my_proj-db
       - name: my_proj-auth
+      - name: my_proj-destination
 
   - name: my_proj-db-deployer
     type: hdb
@@ -65,3 +66,8 @@ resources:
       config:
         xsappname: my_proj-${org}-${space}
         tenant-mode: dedicated
+  - name: my_proj-destination
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite

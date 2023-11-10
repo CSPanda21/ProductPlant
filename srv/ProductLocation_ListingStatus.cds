@@ -11,4 +11,7 @@ service ProductLocation_ListingStatus @(requires: 'authenticated-user') {
 // @readonly entity ProductPlant_Listing as select * ,listing.isListed from PP where listing.isListed = true;
    @readonly entity ProductPlant_Listing as select * ,listing.isListed from PP where listing.validTo = '9999-12-31T00:00:00Z';
 
+// Trigger Alert Notification Service
+   action triggerNotification() returns String;    
+
 }
