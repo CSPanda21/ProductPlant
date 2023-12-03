@@ -43,6 +43,12 @@ Run the below commands:
 To pull/push changes from main brach
 - git pull/push origin main
 
+To create a new branch and push your changes to remore
+- git checkout -b <new_branch_name>
+- git add .
+- git commit -m "<message>"
+- git push --set-upstrem origin  <new_branch_name>
+
 ### Branches in this repository
 - main : In this branch there is domain modeling and a service. This is a complex modeling with entities and replationships and a smiple service.
 
@@ -55,4 +61,9 @@ Initially after adding the authorization the path from approuter was not working
 
 - 3.Added_MSTeams_notification : In this brach we have added an action which sends notification to MS Teams channel.
 
-It uses sap-cloud-sdk to access a BTP destination which points to the SAP Alert Notification service. And this service is responsible for sending notification to MS Teams. From the Teams channel a webhook has been created which is used in the SAP Alert Notification Service. 
+It uses sap-cloud-sdk to access a BTP destination which points to the SAP Alert Notification service. And this service is responsible for sending notification to MS Teams. From the Teams channel a webhook has been created which is used in the SAP Alert Notification Service.
+
+- 4.Added_frontend_reactapp : In this branch added the react frontend app. All mta,approuter configurations corrected. And there is no deployment error as well, but after deployment while running the app from approuter service the below error is coming.
+"503 Service Temporarily Unavailable". 
+
+Needs to be checked.
