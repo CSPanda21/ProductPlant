@@ -1,11 +1,17 @@
 {
+  "welcomeFile": "/frontend",
   "authenticationMethod": "route",
   "routes": [
     {
-      "source": "^/app/(.*)$",
-      "target": "$1",
-      "localDir": ".",
-      "cacheControl": "no-cache, no-store, must-revalidate",
+      "source": "^/frontend/(.*)$",
+      "target": "/msteamsintegration/index.html",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/(.*)$",
+      "target": "/msteamsintegration/$1",
+      "service": "html5-apps-repo-rt",
       "authenticationType": "xsuaa"
     },
     {

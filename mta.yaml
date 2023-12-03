@@ -10,6 +10,8 @@ build-parameters:
       commands:
         - npm install --production
         - npx -p @sap/cds-dk cds build --production
+        - npm --prefix ./frontend install ./frontend
+        - npm run build --prefix ./frontend
 modules:
   - name: my_proj-srv
     type: nodejs
@@ -50,6 +52,26 @@ modules:
           url: ~{srv-url}
           forwardAuthToken: true
       - name: my_proj-auth
+      - name: my_proj-html5-runtime
+
+  - name: my_proj-html5-deployer
+    type: com.sap.html5.application-content
+    path: html5Deployer
+    requires:
+      - name: my_proj-html5-host
+    build-parameters:
+      ignore: ['resources/.DS_Store']
+      requires:
+        - name: my_proj-html5-app
+          artifacts:
+            - "./*"
+          target-path: resources/app
+  - name: my_proj-html5-app
+    type: html5
+    path: frontend
+    build-parameters:
+      supported-platforms: []
+      build-result: build
 
 resources:
   - name: my_proj-db
@@ -71,3 +93,18 @@ resources:
     parameters:
       service: destination
       service-plan: lite
+
+  - name: my_proj-html5-host
+    parameters:
+      service-name: my_proj-html5-host
+      service-plan: app-host
+      service: html5-apps-repo
+      config:
+        sizeLimit: 100
+    type: org.cloudfoundry.managed-service
+  - name: my_proj-html5-runtime
+    parameters:
+      service-name: my_proj-html5-runtime
+      service-plan: app-runtime
+      service: html5-apps-repo
+    type: org.cloudfoundry.managed-service
