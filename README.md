@@ -36,8 +36,8 @@ Run the below commands:
 - cds add hana
 - cds add mta
 - mbt build
-- cf7 deploy mta_archives/PRP1_1.0.0.mtar
-- cf7 deploy mta_archives/PRP1_1.0.0.mtar --delete-services
+- cf deploy mta_archives/my_proj_1.0.0.mtar
+- cf deploy mta_archives/my_proj_1.0.0.mtar --delete-services
 - npm cache clean --force
 
 To pull/push changes from main brach
