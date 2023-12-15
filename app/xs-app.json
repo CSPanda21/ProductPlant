@@ -3,9 +3,16 @@
   "authenticationMethod": "route",
   "routes": [
     {
-      "source": "^/frontend/(.*)$",
+      "source": "^/frontend(.*)$",
       "target": "/msteamsintegration/index.html",
       "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/(.*)$",
+      "target": "$1",
+      "destination": "srv-api",
+      "csrfProtection": true,
       "authenticationType": "xsuaa"
     },
     {
@@ -23,13 +30,6 @@
       "source": "^/appconfig/",
       "localDir": ".",
       "cacheControl": "no-cache, no-store, must-revalidate"
-    },
-    {
-      "source": "^/(.*)$",
-      "target": "$1",
-      "destination": "srv-api",
-      "csrfProtection": true,
-      "authenticationType": "xsuaa"
     }
   ]
 }

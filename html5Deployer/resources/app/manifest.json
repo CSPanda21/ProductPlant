@@ -23,7 +23,7 @@
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "sap.app": {
-    "id": "my_proj.react",
+    "id": "my.proj.react",
     "applicationVersion": {
       "version": "1.0.0"
     }

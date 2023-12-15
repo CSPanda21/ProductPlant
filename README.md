@@ -66,4 +66,7 @@ It uses sap-cloud-sdk to access a BTP destination which points to the SAP Alert 
 - 4.Added_frontend_reactapp : In this branch added the react frontend app. All mta,approuter configurations corrected. And there is no deployment error as well, but after deployment while running the app from approuter service the below error is coming.
 "503 Service Temporarily Unavailable". 
 
-Needs to be checked.
+Needs to be checked. Check the instances and applications in Blue subaccount with my Trial account like what are running. If HTML5 service running or not in both subaccounts.
+
+The service is working but not the app. Like below service URL is working, if you add this from approuter url
+/product-location-listing-status/$metadata

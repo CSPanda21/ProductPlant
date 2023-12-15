@@ -60,7 +60,8 @@ modules:
     requires:
       - name: my_proj-html5-host
     build-parameters:
-      ignore: ['resources/.DS_Store']
+      ignore:
+        - 'resources/.DS_Store'
       requires:
         - name: my_proj-html5-app
           artifacts:
@@ -70,7 +71,8 @@ modules:
     type: html5
     path: frontend
     build-parameters:
-      supported-platforms: []
+      supported-platforms:
+        []
       build-result: build
 
 resources:
