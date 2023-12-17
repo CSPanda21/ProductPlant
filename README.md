@@ -63,10 +63,10 @@ Initially after adding the authorization the path from approuter was not working
 
 It uses sap-cloud-sdk to access a BTP destination which points to the SAP Alert Notification service. And this service is responsible for sending notification to MS Teams. From the Teams channel a webhook has been created which is used in the SAP Alert Notification Service.
 
-- 4.Added_frontend_reactapp : In this branch added the react frontend app. All mta,approuter configurations corrected. And there is no deployment error as well, but after deployment while running the app from approuter service the below error is coming.
-"503 Service Temporarily Unavailable". 
+- 4.Added_frontend_reactapp : It is working now. In this branch added the react frontend app. All mta,approuter configurations corrected.
+Faced multiple challenges here: 
+    - Initially it was giving "503 Service Temporarily Unavailable" - Did troubleshooting using CF HTML5 CLI commands and got to know that I was giving wrong app name and which was deployed that name was different. Used CF HTML5-LIST commands. Mode details : https://github.com/SAP/cf-html5-apps-repo-cli-plugin. There is a troubleshooting guide also in the BTP help in the developn user interface section.
+    - Then the above 503 issue is solved but it was giving blank page. Then when I checked the browser developer tool got to know that it is not finding the .js file. Then corrected the sequence of the routes in the xs-app.json of approuter and then it started working.
 
-Needs to be checked. Check the instances and applications in Blue subaccount with my Trial account like what are running. If HTML5 service running or not in both subaccounts.
-
-The service is working but not the app. Like below service URL is working, if you add this from approuter url
+Next step: The below URL from approuter may not work now because of the xs-app.json route adjustment. App prefix 'api' for the CAP service.
 /product-location-listing-status/$metadata

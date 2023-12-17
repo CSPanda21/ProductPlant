@@ -4,7 +4,13 @@
   "routes": [
     {
       "source": "^/frontend(.*)$",
-      "target": "/msteamsintegration/index.html",
+      "target": "/myprojreact/index.html",
+      "service": "html5-apps-repo-rt",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/(.*)$",
+      "target": "/myprojreact/$1",
       "service": "html5-apps-repo-rt",
       "authenticationType": "xsuaa"
     },
@@ -13,12 +19,6 @@
       "target": "$1",
       "destination": "srv-api",
       "csrfProtection": true,
-      "authenticationType": "xsuaa"
-    },
-    {
-      "source": "^/(.*)$",
-      "target": "/msteamsintegration/$1",
-      "service": "html5-apps-repo-rt",
       "authenticationType": "xsuaa"
     },
     {
