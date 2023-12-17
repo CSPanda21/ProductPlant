@@ -1,0 +1,16 @@
+### Run triggerNotification action. This will send notification to MS Teams
+POST http://localhost:4004/product-location-listing-status/triggerNotification
+Content-Type: application/json
+
+{ }
+
+### Submit Orders
+POST http://localhost:4004/browse/Orders
+Content-Type: application/json
+
+{ "OrderNo":"2019-09...", "Items":[
+    { "book_ID":201, "amount":5 }
+]}
+
+### Check books entity that stock was reduced
+GET http://localhost:4004/browse/Books
