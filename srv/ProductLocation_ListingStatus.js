@@ -25,7 +25,7 @@ let response = await HttpRequest.executeHttpRequest({ destinationName: 'basic_al
     method: 'POST',
     url: "/cf/producer/v1/resource-events",
     data: {
-        "eventType": "sampleType",
+        "eventType": "MyAlert",
         "resource": {
         "resourceName": "sampleName",
         "resourceType": "sampleType",

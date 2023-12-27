@@ -3,6 +3,13 @@
   "authenticationMethod": "route",
   "routes": [
     {
+      "source": "/api/(.*)",
+      "target": "/api/$1",
+      "destination": "srv-api",
+      "csrfProtection": true,
+      "authenticationType": "xsuaa"
+    },
+    {
       "source": "^/frontend(.*)$",
       "target": "/myprojreact/index.html",
       "service": "html5-apps-repo-rt",
@@ -12,13 +19,6 @@
       "source": "^/(.*)$",
       "target": "/myprojreact/$1",
       "service": "html5-apps-repo-rt",
-      "authenticationType": "xsuaa"
-    },
-    {
-      "source": "^/(.*)$",
-      "target": "$1",
-      "destination": "srv-api",
-      "csrfProtection": true,
       "authenticationType": "xsuaa"
     },
     {

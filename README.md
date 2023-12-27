@@ -1,16 +1,18 @@
 # Getting Started
 
-Welcome to your new project.
+Welcome to this new project. This is a CAP + BTP services + React project. Enjoy!!
 
 It contains these folders and files, following our recommended project layout:
 
 File or Folder | Purpose
 ---------|----------
-`app/` | content for UI frontends goes here
-`db/` | your domain models and data go here
-`srv/` | your service models and code go here
+`app/` | content for App router
+`frontend/` | Content for frontend app - In this case I have used React
+`db/` | domain models and data go here
+`srv/` | service models and code go here
 `package.json` | project metadata and configuration
 `readme.md` | this getting started guide
+
 
 
 ## Next Steps
@@ -67,6 +69,6 @@ It uses sap-cloud-sdk to access a BTP destination which points to the SAP Alert 
 Faced multiple challenges here: 
     - Initially it was giving "503 Service Temporarily Unavailable" - Did troubleshooting using CF HTML5 CLI commands and got to know that I was giving wrong app name and which was deployed that name was different. Used CF HTML5-LIST commands. Mode details : https://github.com/SAP/cf-html5-apps-repo-cli-plugin. There is a troubleshooting guide also in the BTP help in the developn user interface section.
     - Then the above 503 issue is solved but it was giving blank page. Then when I checked the browser developer tool got to know that it is not finding the .js file. Then corrected the sequence of the routes in the xs-app.json of approuter and then it started working.
-
-Next step: The below URL from approuter may not work now because of the xs-app.json route adjustment. App prefix 'api' for the CAP service.
-/product-location-listing-status/$metadata
+    - Also I was facing the '403 Forbidden' error for the POST calls from React. It was because of the CSRF error, also I found this from browser developer tools. Then added CORS node module and the server.js file in the SRV folder. Still the issue did not resolve, only the GET calls started working after I added CORS, but the POST call to triggerNotification did not work. This is because the App Router is automatically configured to require a CSRF token by default for all protected routes and all HTTP requests methods except HEAD and GET. Read more details for CSRF and CROSS from CAP documentation link
+    https://cap.cloud.sap/docs/node.js/best-practices#cross-site-request-forgery-csrf-token
+    Then after adding the CSRF token to the POST call of triggerNotification it started working. Wow!!!!! :)
