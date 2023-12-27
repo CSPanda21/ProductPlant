@@ -43,7 +43,7 @@ Run the below commands:
 - npm cache clean --force
 
 To pull/push changes from main brach
-- git pull/push origin main
+- git add . , git commit -m "<message>" , git pull/push origin main
 
 To create a new branch and push your changes to remore
 - git checkout -b <new_branch_name>
@@ -71,4 +71,5 @@ Faced multiple challenges here:
     - Then the above 503 issue is solved but it was giving blank page. Then when I checked the browser developer tool got to know that it is not finding the .js file. Then corrected the sequence of the routes in the xs-app.json of approuter and then it started working.
     - Also I was facing the '403 Forbidden' error for the POST calls from React. It was because of the CSRF error, also I found this from browser developer tools. Then added CORS node module and the server.js file in the SRV folder. Still the issue did not resolve, only the GET calls started working after I added CORS, but the POST call to triggerNotification did not work. This is because the App Router is automatically configured to require a CSRF token by default for all protected routes and all HTTP requests methods except HEAD and GET. Read more details for CSRF and CROSS from CAP documentation link
     https://cap.cloud.sap/docs/node.js/best-practices#cross-site-request-forgery-csrf-token
-    Then after adding the CSRF token to the POST call of triggerNotification it started working. Wow!!!!! :)
+    Then after adding the CSRF token to the POST call of triggerNotification it started working. 
+    Wow!!!!!
