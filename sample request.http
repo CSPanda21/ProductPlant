@@ -1,6 +1,13 @@
 ### Run triggerNotification action. This will send notification to MS Teams
-POST http://localhost:4004/product-location-listing-status/triggerNotification
+POST http://localhost:4004/api/triggerNotification
 Content-Type: application/json
+
+{ }
+
+### Run triggerNotification action. This will send notification to MS Teams
+GET http://localhost:4004/api/ProductPlant_Listing
+Content-Type: application/json
+x-csrf-token: fetch
 
 { }
 
