@@ -54,6 +54,18 @@
   },
   "cds": {
     "requires": {
+      
+          "[dev]": {
+            "auth": {
+              "kind": "mocked",
+              "users": {
+                "chandan21own@yahoo.com": {
+                  "password": "1234"
+                }
+              }
+            }
+          },
+
       "db": {
         "kind": "hana"
       },

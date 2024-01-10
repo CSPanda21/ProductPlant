@@ -1,6 +1,6 @@
 # Getting Started
 
-Welcome to this new project. This is a CAP + BTP services + React project. Enjoy!!
+Welcome to this new project. This is a CAP + React app deployed to BTP Cloud Foundry runtime. Enjoy!!
 
 It contains these folders and files, following our recommended project layout:
 
