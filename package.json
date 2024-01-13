@@ -21,7 +21,9 @@
     "sqlite3": "^5.0.4"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "start:client": "cd frontend && npm start",
+    "start:server": "cds-serve"
   },
   "engines": {
     "npm": ">=9.0.0 <9.6.0",
@@ -55,11 +57,11 @@
   "cds": {
     "requires": {
       
-          "[dev]": {
+          "[development]": {
             "auth": {
               "kind": "mocked",
               "users": {
-                "chandan21own@yahoo.com": {
+                "chandan21own": {
                   "password": "1234"
                 }
               }
