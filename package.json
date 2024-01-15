@@ -63,8 +63,15 @@
               "users": {
                 "chandan21own": {
                   "password": "1234"
+                },
+                "rajesh": {
+                  "password": "1234",
+                  "roles": ["planner"]
                 }
               }
+            },
+            "db": {
+              "kind": "sql"
             }
           },
 
