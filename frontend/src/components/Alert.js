@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import { useState } from 'react';
 import axios from 'axios';
 
-const Navbar = () => {
+const Alert = () => {
 
   const [msg, setMsg] = useState("");
 
@@ -36,9 +36,6 @@ const Navbar = () => {
 return(
 <Box
       component="form"
-      sx={{
-        "& .MuiTextField-root": { m: 3, width: "50ch" }
-      }}
       noValidate
       autoComplete="off"
     >
@@ -50,11 +47,11 @@ return(
           defaultValue="Sample Alert Body"
           value={msg} onChange={(e) => setMsg(e.target.value)}
         />
-        <Button variant="contained" onClick={onClick}>Send Notification</Button>
+        <Button title="Send Notification" variant="contained" onClick={onClick}>Send</Button>
       </div>
     </Box>
 )
 
 }
 
-export default Navbar;
+export default Alert;
