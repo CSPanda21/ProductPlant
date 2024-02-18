@@ -83,7 +83,7 @@ aspect ProductPlantListing {
      */
     /*
     * Status of listing: if WLK1-NEGAT is initial, this indicator
-    * has to be set to true, otherwise false
+    * has to be set to true, otherwise false which means it is delisted for the period
     */
     isListed      : Boolean;
 }

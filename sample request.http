@@ -1,13 +1,29 @@
 ### Run triggerNotification action. This will send notification to MS Teams
 POST http://localhost:4004/api/triggerNotification
 Content-Type: application/json
+Authorization: Basic chandan21own:1234
 
 { }
 
-### Run triggerNotification action. This will send notification to MS Teams
+### productListing
+POST http://localhost:4004/api/productListing
+Content-Type: application/json
+Authorization: Basic rajesh:1234
+
+{ 
+    "productPlant": {
+        "product_id" : "19091",
+        "plant_id": "1051",
+        "validFrom": "2022-01-01T00:00:00Z",
+        "validTo": "2022-12-31T00:00:00Z"
+    }
+}
+
+### Get listing
 GET http://localhost:4004/api/ProductPlant_Listing
 Content-Type: application/json
 x-csrf-token: fetch
+Authorization: Basic chandan21own:1234
 
 { }
 
