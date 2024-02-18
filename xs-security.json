@@ -1,9 +1,23 @@
 {
   "xsappname": "myhanaapp",
   "tenant-mode": "dedicated",
-  "scopes": [],
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.planner",
+      "description": "planner"
+    }
+  ],
   "attributes": [],
-  "role-templates": [],
+  "role-templates": [
+    {
+      "name": "planner",
+      "description": "generated",
+      "scope-references": [
+          "$XSAPPNAME.planner"
+      ],
+      "attribute-references": []
+    }
+  ],
   "oauth2-configuration": {
     "credential-types": [
       "binding-secret",

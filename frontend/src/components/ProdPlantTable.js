@@ -47,26 +47,29 @@ const ProdPlantTable = () => {
   },[]);
 
 return(
-
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} class="table">
     <Table sx={{ minWidth: 650 }} aria-label="simple table">
       <TableHead>
         <TableRow>
           <TableCell>Product</TableCell>
           <TableCell>Plant</TableCell>
+          <TableCell>Valid From</TableCell>
+          <TableCell>Valid To</TableCell>
           <TableCell align="right">isListed</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         {data.map((line) => (
           <TableRow
-            key={`${line.product_id}-${line.plant_id}`}
+            key={`${line.product_id}-${line.plant_id}-${line.validFrom}`}
             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
           >
             <TableCell component="th" scope="line">
               {line.product_id}
             </TableCell>
             <TableCell>{line.plant_id}</TableCell>
+            <TableCell>{line.validFrom}</TableCell>
+            <TableCell>{line.validTo}</TableCell>
             <TableCell align="right">{line.isListed? "Yes": "No"}</TableCell>
           </TableRow>
         ))}

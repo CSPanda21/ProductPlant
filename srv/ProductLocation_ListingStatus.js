@@ -35,7 +35,7 @@ let response = await HttpRequest.executeHttpRequest({ destinationName: 'basic_al
         },
         "severity": "FATAL",
         "category": "ALERT",
-        "subject": "Triggered from CAP Application",
+        "subject": "New Listing created",
         "body": "Wow! This message you see is triggered from CAP Application.",
         "tags": {
             "ans:correlationId": "30118",
@@ -62,6 +62,8 @@ srv.on('productListing', async (req) => {
     if (prodPlant.length !== 0 ) {
         try {
             // const data = {...req.data};
+            req.data.productPlant.isListed = req.data.productPlant.isListed=== undefined? true :req.data.productPlant.isListed; 
+            req.data.productPlant.validFrom = req.data.productPlant.validFrom===undefined? Date() : req.data.productPlant.validFrom;
             const data = {
                 up__product_id : req.data.productPlant.product_id,
                 up__plant_id:    req.data.productPlant.plant_id,

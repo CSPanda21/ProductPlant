@@ -7,9 +7,10 @@ service ProductLocation_ListingStatus @(path:'api') @(requires: 'authenticated-u
 
 // @readonly entity Products as projection on Prd;
 // @readonly entity ProductPlant_Listing as projection on PP {*, listing.isListed};
-// @readonly entity ProductPlant_Listing as select * ,listing.isListed from PP where listing.isListed = true;
 
-   @readonly entity ProductPlant_Listing as select * ,listing.isListed from PP where listing.validTo = '9999-12-31T00:00:00Z';
+   @readonly entity ProductPlant_Listing as select * ,listing.isListed,listing.validFrom,listing.validTo from PP;
+
+// @readonly entity ProductPlant_Listing as select * ,listing.isListed from PP where listing.validTo = '9999-12-31T00:00:00Z';
 
 // Listing of Product
    @requires: 'planner'
