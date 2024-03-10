@@ -31,6 +31,10 @@ mta_archives/
 *.iml
 *.flattened-pom.xml
 
+# html5Deployer
+html5Deployer/resources
+html5Deployer/package-lock.json
+
 # IDEs
 # .vscode
 # .idea
